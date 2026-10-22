@@ -3,6 +3,7 @@
   const desktopPointer = window.matchMedia('(min-width: 900px) and (hover: hover) and (pointer: fine)');
   const hero = document.querySelector('.hero');
   const image = document.querySelector('.hero-image');
+  const heroPicture = document.querySelector('.hero-visual picture');
   const reveals = [...document.querySelectorAll('[data-reveal]')];
   const animated = new Set();
   let observer = null;
@@ -11,6 +12,8 @@
 
   function revealEverything() {
     observer?.disconnect();
+    if (frame) window.cancelAnimationFrame(frame);
+    frame = 0;
     reveals.forEach((element) => {
       element.classList.remove('reveal-pending');
       element.classList.add('is-revealed');
@@ -21,14 +24,26 @@
     if (image) image.style.transform = '';
   }
 
-  function enter(element, duration, delay) {
-    if (!element || !element.animate || reduceMotion.matches) return;
-    const animation = element.animate([
-      { opacity: 0, transform: 'translateY(14px)' },
-      { opacity: 1, transform: 'translateY(0)' }
-    ], { duration, delay, easing: 'cubic-bezier(.23,1,.32,1)', fill: 'backwards' });
+  function play(element, keyframes, options) {
+    if (!element?.animate || reduceMotion.matches) return;
+    const animation = element.animate(keyframes, options);
     animated.add(animation);
     animation.finished.then(() => animated.delete(animation)).catch(() => {});
+  }
+
+  function enter(element, duration, delay = 0, initialOpacity = 0) {
+    if (!element || reduceMotion.matches) return;
+    play(element, [
+      { opacity: initialOpacity, transform: 'translate3d(0, 12px, 0)' },
+      { opacity: 1, transform: 'translateY(0)' }
+    ], { duration, delay, easing: 'cubic-bezier(.23,1,.32,1)', fill: 'backwards' });
+  }
+
+  function enterHeroPicture() {
+    play(heroPicture, [
+      { opacity: 0.92, transform: 'translate3d(0, 12px, 0) scale(1.03)' },
+      { opacity: 1, transform: 'translate3d(0, 0, 0) scale(1)' }
+    ], { duration: 640, easing: 'cubic-bezier(.23,1,.32,1)', fill: 'backwards' });
   }
 
   function setupReveals() {
@@ -74,16 +89,21 @@
 
   function setupParallax() {
     parallaxActive = desktopPointer.matches && !reduceMotion.matches;
-    if (!parallaxActive && image) image.style.transform = '';
+    if (!parallaxActive) {
+      if (frame) window.cancelAnimationFrame(frame);
+      frame = 0;
+      if (image) image.style.transform = '';
+    }
     if (parallaxActive) requestParallax();
   }
 
   setupReveals();
   setupParallax();
   if (!reduceMotion.matches) {
-    document.querySelectorAll('.hero-line').forEach((line, index) => enter(line, 560, index * 70));
-    enter(document.querySelector('.hero-intro'), 500, 120);
-    enter(document.querySelector('.hero-actions'), 500, 160);
+    enterHeroPicture();
+    enter(document.querySelector('#hero-title'), 450, 0, 0.78);
+    enter(document.querySelector('.hero-intro'), 420, 70);
+    enter(document.querySelector('.hero-actions'), 420, 110);
   }
   window.addEventListener('scroll', requestParallax, { passive: true });
   window.addEventListener('resize', setupParallax, { passive: true });

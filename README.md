@@ -1,54 +1,43 @@
-# Lilian Restaurant — Premium V2
+# Lilian Restaurant — V3
 
-Een Nederlandse, statische restaurantwebsite voor Lilian in Leeuwarden. De herkenbare zwart-rood-witte identiteit en het officiële logo blijven behouden. De nieuwe compositie gebruikt een groot sfeerbeeld, warme editorial secties, een doorzoekbare menukaart en duidelijke informatie voor bestellen en bezoeken.
+موقع هولندي ساكن للمطعم في Leeuwarden، بإعادة تصميم جرافيكية حديثة وإيقاع تحريري. الشعار الرسمي والهوية الأحمر/الفحمي محفوظان. الصور الجديدة تقود الافتتاحية والفئات، والقائمة أداة عملية للبحث والاختيار.
 
-## De menukaart
+## البيانات والطلب
 
-Alle 125 menu-items en 14 categorieën blijven behouden. Met JavaScript begint de kaart bij Burgers; **Alles** toont de volledige kaart. Zoeken doorzoekt naam en officiële beschrijving in alle categorieën, ongeacht hoofdletters en accenten. Daarna kan een categorie de zoekresultaten verder beperken. Wis de zoekopdracht of gebruik de resetknop als er geen resultaten zijn.
+`restaurant-data.js` هو مصدر الحقيقة:125 صنفًا و14 فئة، بأسماء وأسعار ووصف ومعرّفات محفوظة من V2. لم تُعدّل البيانات خلال إعادة التصميم. العرض يبدأ بفئة Burgers؛ زرAlles يعرض جميع الأصناف. البحث عالمي في الاسم والوصف ويطبع الحروف واللكنات؛ اختيار فئة يضيّق النتائج، ومسح البحث أو إعادة الضبط يعيد التصفح.
 
-De complete kaart, categorieën, prijzen en uren staan ook in het oorspronkelijke HTML-document. Zonder JavaScript kan een bezoeker de volledige kaart lezen en de algemene officiële bestelknoppen gebruiken; zoeken en de lokale detailvensters vereisen JavaScript.
+ضغط الصنف يفتح نافذة محلية بالاسم والسعر والوصف. زرها يفتح **نفس الصنف** عبر `https://www.lilianrestaurant.nl/#product{id}`. تُضاف الوجبة إلى السلة هناك يدويًا، ويُستكمل العنوان وخيارات الاستلام/التوصيل والدفع والتأكيد في Lilian / Sitedish الرسمي. لا سلة محلية، ولا مزامنة خفية، ولا إرسال طلب أو معالجة دفع من هذا الموقع.
 
-`restaurant-data.js` is de bron van waarheid. Na een gecontroleerde gegevenswijziging:
+روابط الطلب العامة إلى `https://www.lilianrestaurant.nl/#menu`، وملخص الطلب الرسمي إلى `https://www.lilianrestaurant.nl/bestellen`. تبقى روابط كل الأصناف متاحة بدونJavaScript، مع بيانات القائمة كاملة فيHTML. البحث والنوافذ المحلية يتطلبانJavaScript.
 
-```bash
+## الحقائق والأصول
+
+العنوان Voorstreek86،8911JT Leeuwarden، الهاتف0647789977. المواعيد القديمة المنقولة من الموقع الرسمي 07:00–12:00 يوميًا تبقى معلّمة بأنها معلومات مصدر منشورة، لا حالة افتتاح حية. ينبغي أن يؤكدها صاحب المطعم قبل التسليم التجاري النهائي؛ لم تُخمن مواعيد بديلة.
+
+صورة Sitedish العامة الأصلية محفوظة للرجوع وليست صورة طبق Lilian محدد. صورV3 الجديدة **مفاهيمية مولّدة** وليست صور أطباق فعلية أو أحجام حصص معتمدة؛ كل موضع يحمل توضيحًا مرئيًا. لم تُسند صور إلىSKU أو نافذةتفاصيل. `brand-spec.md` يوثق الأصول والمرجع والاتجاه والرقم المرجعي للنسخة السابقة. الشعار غير مرسوم مجددًا والخطوط المحلية مرخصة SIL OFL.
+
+## البنية والصيانة
+
+`index.html` للأقسام والدلالات وبياناتSEO والقائمة الساكنة والحوار. `styles.css` لأساس التفاعل والاستجابة وإمكانية الوصول، و`v3.css` للمعالجة الفنية الجديدة عبر جميع الأقسام. `app.js` للتفاعل المحفوظ، و`motion.js` للحركة المحدودة. `assets/` للأصول المحلية؛ لا CDN للخطوط أو اعتماد على رابط تخزين مؤقت وقت التصفح.
+
+بعد تغيير معتمد في بيانات القائمة:
+
+```sh
 node scripts/sync-menu.mjs
+node --check app.js
+node --check motion.js
 ```
 
-Dit genereert de statische kaart, categorieknoppen, uren en Restaurant/Menu JSON-LD opnieuw tussen gemarkeerde blokken in `index.html`. Het controleert 125 unieke producten en 14 niet-lege categorieën. Er is geen build vereist bij het publiceren: het gegenereerde HTML-bestand wordt meegestuurd.
+يعيد السكربت توليد القائمة والفلاتر والمواعيد وRestaurant/Menu JSON-LD ضمن مناطق معلّمة. لا تعدّل تلك المناطق يدويًا إذا كنت ستعيد توليدها. لا build أو npm runtime مطلوبان.
 
-## Bestellen: officiële Lilian / Sitedish-integratie
+## التطوير والنشر
 
-Dit is een ontdek- en menukaartwebsite, geen aangesloten winkelwagen. Een gerecht opent een toegankelijk detailvenster met precies de officiële naam, omschrijving en prijs. **Open dit gerecht bij Lilian** opent `https://www.lilianrestaurant.nl/#product{id}` voor hetzelfde item in een nieuw tabblad.
-
-De bezoeker voegt het gerecht daar zelf aan de officiële winkelwagen toe. Lilian / Sitedish beheert de bestelling, gegevens, beschikbare bezorg- of afhaaltijden, betaalwijzen en bevestiging. Deze website voegt niets aan de winkelwagen toe, verzendt geen bestelling en verwerkt geen betaling. Beschikbare tijden kunnen veranderen of ontbreken.
-
-Algemene bestelknoppen openen `https://www.lilianrestaurant.nl/#menu`. Het bestaande besteloverzicht blijft beschikbaar via `https://www.lilianrestaurant.nl/bestellen`. Alle 125 ID-ankers, namen, categorieën, omschrijvingen en prijzen worden bij updates tegen de officiële kaart gecontroleerd.
-
-## Informatie en beeldbronnen
-
-Adres: Voorstreek 86, 8911 JT Leeuwarden. Telefoon: 0647789977. De officiële website vermeldde bij controle op 23 oktober 2026 openings- en bezorgtijden van 07:00–12:00 op alle weekdagen. Dit wordt als gepubliceerde broninformatie getoond, niet als live openingsstatus; laat de eigenaar deze opvallende uren bevestigen vóór een definitieve commerciële overdracht.
-
-De foto is het gedeelde Sitedish-cafetaria-sfeerbeeld dat de officiële Lilian-site gebruikt, geen geverifieerde foto van een specifiek Lilian-gerecht. Daarom staat de foto alleen in de hero, met bronvermelding, en niet bij individuele producten. Het logo wordt niet vervormd of opnieuw getekend. Zie `brand-spec.md` voor assetbronnen en de lokaal meegeleverde SIL OFL-fontlicenties.
-
-## Bestanden en techniek
-
-- `index.html`: semantische secties, volledig statisch menu/uren, metadata, Restaurant/Menu JSON-LD en native detailvenster.
-- `styles.css`: responsieve charcoal/rood/crème-compositie, leesbare cards, focus, touch-targets, beperkte CSS-3D-diepte en reduced-motion/print.
-- `app.js`: categorieën/zoeken, exacte productvensters, focusherstel en mobiele navigatie.
-- `motion.js`: selectieve IntersectionObserver-reveals, begrensde desktopparallax en hero-entree via Web Animations.
-- `restaurant-data.js`: behouden officiële catalogus en URLs.
-- `scripts/sync-menu.mjs`: reproduceerbare statische kaart/schema-generatie, uitsluitend Node ingebouwde modules.
-- `assets/`: originele logo/foto plus geoptimaliseerde lokale WebP-, icon- en lettertypebestanden.
-- `site.webmanifest`, `sitemap.xml`, `manus-routes.json`, `.nojekyll`: relatieve statische compatibiliteit en pagina-/iconmetadata.
-
-Geen nieuwe runtime-dependencies, GSAP, WebGL of Three.js. Zoek- en toetsenbordreacties zijn direct; pointerfiltering animeert maximaal zes kaarten. Dialogen ondersteunen Escape, buitenklik en focusherstel. Motion wordt uitgeschakeld bij `prefers-reduced-motion`; hover is nergens noodzakelijk.
-
-## Lokaal en GitHub Pages
-
-```bash
+```sh
 python3 -m http.server 3000 --bind 0.0.0.0
 ```
 
-De productiehost is [GitHub Pages](https://binz2008-star.github.io/lilian-res/), vanuit `main` en de repository-root van [Binz2008-star/lilian-res](https://github.com/Binz2008-star/lilian-res). Alle applicatie- en assetpaden zijn relatief en werken onder `/lilian-res/`. Een gewone push naar `main` werkt de site bij; er is geen wijziging aan de bestaande Pages-configuratie nodig.
+الموقع العام https://binz2008-star.github.io/lilian-res/ من `main` وجذر المستودع https://github.com/Binz2008-star/lilian-res. المسارات نسبية وتعمل تحت `/lilian-res/`. لا تغيير لإعداداتPages أو تفعيل استضافةManus.
 
-Canonical en OG URL verwijzen naar deze Pages-publicatie. Als Lilian dit ontwerp later op zijn officiële domein zet, wijzig dan canonical/OG/schema/sitemap naar dat domein en controleer de Sitedish-routes opnieuw. `robots.txt` op een repository-subpad bestuurt niet de GitHub-gebruikersdomeinroot; er worden daarom geen misleidende crawlerregels toegevoegd.
+V2 محفوظ على `recovery/lilian-v2` عند `83c2cceeb6685b1df2e2aba6df5ea5449c2809f2`. الرجوع مستقبلاً يكون بcommit عادي جديد يحافظ على التاريخ، وليس force-push أو حذففروع. نسخةV3 تطورت على `redesign/lilian-v3` قبل الدمج بعد الاختبار.
+
+`prototypes/` و`qa/v3/` تخصان المقارنة والاختبار في المشروع الداخلي، وليستا صفحات المنتج المنشور. لا تعتمد الصفحات على مكتبات حركة أو WebGL أو بوتات أو خدمة خلفية. لا توجد طلبات تستدعي مواردحساسة أو بياناتعميل. تقليل الحركة يحافظ على المحتوى، ولوحة المفاتيح واللمس لا يعتمدان علىhover.

@@ -1,13 +1,19 @@
-# Lilian brand and asset specification
+# Lilian V3 — العلامة والأصول
 
-Official identity: the unchanged restaurant logo is bundled as `assets/lilian-official-logo.jpg`, sourced from https://cdn.sitedish.nl/www.lilianrestaurant.nl/img/logo.png. The optimized header/footer rendition is `assets/lilian-logo.webp`. Icon files extract the original chef-hat portion of this logo; they do not introduce a new mark. The share image is an aspect-correct padded version of the official logo.
+الشعار الرسمي الأصلي غير معاد الرسم، من https://cdn.sitedish.nl/www.lilianrestaurant.nl/img/logo.png، محفوظ مع نسخة العرض `assets/lilian-logo.webp`. لا تحوير لنسبه أو بياناته. الأيقونات مستخرجة من علامة قبعة الطاهي الأصلية.
 
-Photography: `assets/official-food.jpg` (1000×750) is the atmosphere image used by https://www.lilianrestaurant.nl/, sourced from https://cdn.sitedish.nl/algemeen/img/photos/sorted/lunch/cafetaria/cafetaria9.jpg. It is shared Sitedish cafeteria imagery, not a verified photo of any exact Lilian dish or premises. The hero visibly captions this provenance. `food-640.webp` and `food-1000.webp` are responsive re-encodes; originals remain preserved. No food image is assigned to a product detail or used to claim an ingredient/portion.
+## التصوير: فصل الحقيقة عن المفهوم
 
-Palette: charcoal #0b0b0c, red #d91e2d, contrast-safe deep red #be1424, warm white #f1eee7. Headings: Barlow Condensed 800. Body: Manrope 400–800. The locally bundled Latin WOFF2 files are licensed under SIL OFL; full license files accompany them in `assets/fonts/`. Original logo dimensions/aspect are preserved.
+وجد البحث أن صورة الموقع الرسمي مصدرها العام https://cdn.sitedish.nl/algemeen/img/photos/sorted/lunch/cafetaria/cafetaria9.jpg، ولا توجد مكتبة صور للـ125 صنفًا ضمن الصفحة الرسمية المفحوصة. الأصل `official-food.jpg` محفوظ للرجوع لكنه لم يعد يقود V3.
 
-Art direction: editorial fast-casual energy, cinematic food crop, confident Dutch copy, numbered section labels, warm category index, legible searchable menu and practical location information. No invented luxury positioning, charcoal-cooking claim, ratings, testimonials, awards or live opening indicator.
+تم توليد صورتين مفاهيميتين أصليتين لتكوين V3: `v3-burger.png` و`v3-kapsalon.png`، بخلفية شفافة ثم نسخWebP متجاوبة محفوظة النسب. لا تُنسب أي منهما لطبق Lilian أو حجم حصة أو مكونات صنف محدد. يحمل كل موضع مرئي تعليقًا «Conceptbeeld · geen productfoto van Lilian» أو صياغة مكافئة؛ والـalt يصرح بالمفهوم. الصور على مستوى الأجواء والفئات فقط، لا في تفاصيل الأصناف أو مقابل أسعارSKU. الاستبدال بصور أطباق حقيقية معتمدة من العميل هو الخطوة الطبيعية لاحقًا.
 
-Research references inspected by a dedicated isolated specialist: https://www.blackbearburger.com/ and https://www.blackbearburger.com/locations for brand-versus-operational hierarchy; https://www.foodbrothersamsterdam.nl/ and https://www.foodbrothersamsterdam.nl/info for Dutch category/menu and allergy-contact clarity. Their assets, recipes, availability/status and promotional claims are not copied.
+الألوان: فحمي #0b0b0c، كريم #f2eee5، أحمر #d91e2d وأحمر عميق #b81725. خطوط محلية مرخصة SIL OFL: Barlow Condensed للعناوين، Manrope للنص، وGeorgia system-serif للميل التحريري. لا خطوط CDN وقت التصفح.
 
-Motion: CSS / Web Animations / IntersectionObserver only. One-shot section reveals, bounded fine-pointer desktop hero parallax, perspective hover depth on four category links, six-card maximum pointer filter stagger, instant keyboard/search actions, short cancelable dialog entry/exit. Reduced-motion disables spatial motion and leaves essential content visible. No runtime dependencies or WebGL.
+## الاتجاه والتكوين
+
+رُندرت ثلاثة اتجاهات افتتاحية قبل الاختيار: سينمائيA، علامة هولندية جريئةB، تحرير كريميC. اختيرB مع هدوءC، لأنA بقي قريبًا منV2 وC أقرب للمطاعم الرسمية. نسخة المنتج ليست النموذج نفسه: صورة cutout كبيرة على مستوى أحمر مائل، عنوان من كلمتين، ومقدمة فحمية وفئات صور غير متناظرة وقائمة تحريرية كريمية وشرحطلب أحمر واتصال داكن. لا جوائز أو تعليقات مزيفة أو أشخاص أو مقر مختلق.
+
+تمت دراسة https://www.framer.com/blog/restaurant-website-design-examples/، وفحص https://fritesatelier.com/ وhttps://www.honestburgers.co.uk/ بواسطة متخصص تصميم مستقل. الاقتباس هو الإيقاع والوضوح وقيادة الطعام؛ لا نسخ صور أو claims أو أسعار أو أصول هذه المواقع.
+
+الحركة CSS وWebAnimations وIntersectionObserver فقط: دخول صورة محدودعلىpicture، كشف أحادي للعناوين، perspective محدود للفئات، parallax16px للكمبيوتر ذي مؤشر دقيق فقط. السلة والبيانات والدفع تتم في Sitedish الرسمي؛ البحث والتفاصيل والروابط الدقيقة تبقى فورية. تقليل الحركة يعطل الحركة المكانية.

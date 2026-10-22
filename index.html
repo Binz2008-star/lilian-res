@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0b0b0c">
-    <title>Lilian Restaurant Leeuwarden | Good Food, Good Mood</title>
+    <title>Lilian Restaurant Leeuwarden | Burgers, Kapsalon & Döner</title>
     <meta name="description" content="Burgers, kapsalon, döner en meer bij Lilian Restaurant in Leeuwarden. Ontdek de volledige menukaart en bestel via het officiële bestelsysteem van Lilian.">
     <link rel="canonical" href="https://binz2008-star.github.io/lilian-res/">
-    <meta property="og:title" content="Lilian Restaurant — Good Food, Good Mood">
+    <meta property="og:title" content="Lilian Restaurant — Grote trek. Goede keuze.">
     <meta property="og:description" content="Jouw trek. Jouw keuze. Ontdek de kaart van Lilian Restaurant, Voorstreek 86 in Leeuwarden.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="nl_NL">
@@ -24,6 +24,7 @@
     <link rel="manifest" href="./site.webmanifest">
     <link rel="preload" href="./assets/fonts/barlow-condensed-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./v3.css">
     <script defer src="./restaurant-data.js"></script>
     <script defer src="./app.js"></script>
     <script defer src="./motion.js"></script>
@@ -60,49 +61,45 @@
 
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
-        <figure class="hero-visual">
-          <picture>
-            <source type="image/webp" srcset="./assets/food-640.webp 640w, ./assets/food-1000.webp 1000w" sizes="(max-width: 899px) 100vw, 68vw">
-            <img class="hero-image" src="./assets/official-food.jpg" alt="Sfeerbeeld met hamburgers op een houten tafel, gebruikt op de officiële website van Lilian" width="1000" height="750" fetchpriority="high" decoding="async">
-          </picture>
-          <figcaption>Sfeerbeeld van de officiële website</figcaption>
-        </figure>
-        <div class="hero-layer" aria-hidden="true"></div>
-        <div class="hero-content wrap">
-          <div class="hero-meta"><p class="eyebrow"><span class="red-square" aria-hidden="true"></span> LILIAN RESTAURANT · LEEUWARDEN</p><span class="hero-index" aria-hidden="true">01 / LILIAN</span></div>
+        <div class="hero-ribbon" aria-hidden="true"><span>LILIAN · LEEUWARDEN</span></div>
+        <div class="hero-stage wrap">
           <div class="hero-copy">
-            <h1 id="hero-title"><span class="hero-line">GOOD FOOD.</span><span class="hero-line hero-line-red">GOOD MOOD.</span></h1>
-            <p class="hero-intro">Een burger. Een kapsalon. Of iets heel anders.<br>Waar je ook trek in hebt, je vindt het bij Lilian.</p>
-            <div class="hero-actions">
-              <a class="button button-red" href="https://www.lilianrestaurant.nl/#menu" data-order-menu target="_blank" rel="noopener noreferrer">Bestel bij Lilian <span aria-hidden="true">↗</span><span class="sr-only"> (nieuw tabblad)</span></a>
-              <a class="hero-secondary" href="#menu">Ontdek de menukaart <span aria-hidden="true">↓</span></a>
-            </div>
-            <p class="hero-order-note">Bestellen & betalen via het officiële Lilian-bestelsysteem.</p>
+            <p class="eyebrow hero-kicker">LILIAN RESTAURANT / LEEUWARDEN</p>
+            <h1 id="hero-title"><span class="hero-line">GROTE</span><span class="hero-line hero-script">trek.</span></h1>
+            <p class="hero-intro">Goede keuze begint bij Lilian.<br>Burgers, kapsalon, döner en nog veel meer.</p>
+            <div class="hero-actions"><a class="button button-red" href="https://www.lilianrestaurant.nl/#menu" data-order-menu target="_blank" rel="noopener noreferrer">Bestel bij Lilian <span aria-hidden="true">↗</span><span class="sr-only"> (nieuw tabblad)</span></a><a class="hero-secondary" href="#menu">Bekijk de kaart <span aria-hidden="true">↓</span></a></div>
+            <p class="hero-order-note">Je winkelwagen & betaling bij Lilian / Sitedish.</p>
           </div>
-          <div class="hero-bottom"><a href="#contact"><span aria-hidden="true">⌖</span> Voorstreek 86, Leeuwarden</a><span>BURGER · SNACK · DONER</span><a class="hero-scroll" href="#over" aria-label="Ontdek meer over Lilian"><span aria-hidden="true">↓</span></a></div>
+          <figure class="hero-visual">
+            <div class="food-red-plane" aria-hidden="true"></div>
+            <span class="food-back-type" aria-hidden="true">LILIAN</span>
+            <picture><source type="image/webp" srcset="./assets/v3-burger-640.webp 640w, ./assets/v3-burger-1000.webp 1000w, ./assets/v3-burger-1600.webp 1600w" sizes="(max-width: 599px) 105vw, (max-width: 899px) 75vw, 60vw"><img class="hero-image" src="./assets/v3-burger-1000.webp" alt="Conceptueel sfeerbeeld van een burger met friet; geen productfoto van Lilian" width="1920" height="1440" fetchpriority="high" decoding="async"></picture>
+            <div class="food-seal" aria-hidden="true">BURGER<br>SNACK<br>DÖNER <span>↗</span></div>
+            <figcaption>Conceptbeeld · geen productfoto van Lilian</figcaption>
+          </figure>
         </div>
+        <div class="hero-bottom wrap"><a href="#contact"><span aria-hidden="true">⌖</span> Voorstreek 86 · Leeuwarden</a><span>JOUW TREK. JOUW KEUZE.</span><a class="hero-scroll" href="#over" aria-label="Ontdek meer over Lilian"><span aria-hidden="true">↓</span></a></div>
       </section>
 
       <section class="discovery-section" id="over" aria-labelledby="intro-title">
         <div class="wrap">
           <div class="discovery-intro" data-reveal>
-            <p class="section-index"><span>02</span> JOUW TREK, JOUW KEUZE</p>
-            <h2 id="intro-title">VEEL KEUZE.<br><span>ÉÉN LILIAN.</span></h2>
-            <div class="intro-copy"><p>Van burgers en kapsalon tot döner, grillgerechten en pasta. Ontdek de kaart van Lilian Restaurant aan de Voorstreek in Leeuwarden.</p><a class="text-link" href="#menu">Bekijk alle 14 categorieën <span aria-hidden="true">↗</span></a></div>
+            <p class="section-index"><span>01</span> ER STAAT MEER OP DE KAART</p>
+            <h2 id="intro-title">Jouw volgende<br><span>favoriet.</span></h2>
+            <div class="intro-copy"><p>Een burger, een kapsalon of iets van de grill. Van een kleine snack tot een complete maaltijd: ontdek jouw keuze bij Lilian.</p><a class="text-link" href="#menu">Ontdek alle 14 categorieën <span aria-hidden="true">↗</span></a></div>
           </div>
           <div class="discovery-links" aria-label="Ontdek menucategorieën">
-            <a class="discovery-card" href="#menu" data-discover-category="burgers" data-reveal><span class="discovery-number">01 /</span><h3>BURGERS</h3><p>Classic, cheese of Mexican.</p><span class="discovery-arrow" aria-hidden="true">↗</span></a>
-            <a class="discovery-card" href="#menu" data-discover-category="kapsalon" data-reveal><span class="discovery-number">02 /</span><h3>KAPSALON</h3><p>Döner, shoarma of crispy.</p><span class="discovery-arrow" aria-hidden="true">↗</span></a>
-            <a class="discovery-card" href="#menu" data-discover-category="mix-grill" data-reveal><span class="discovery-number">03 /</span><h3>MIX GRILL</h3><p>Ontdek de grillgerechten.</p><span class="discovery-arrow" aria-hidden="true">↗</span></a>
-            <a class="discovery-card" href="#menu" data-discover-category="snacks" data-reveal><span class="discovery-number">04 /</span><h3>SNACKS</h3><p>Voor grote en kleine trek.</p><span class="discovery-arrow" aria-hidden="true">↗</span></a>
+            <a class="discovery-card discovery-burger" href="#menu" data-discover-category="burgers" data-reveal><div class="feature-copy"><span class="discovery-number">01 / DE BURGERS</span><h3>Altijd<br>een goede<br><em>keuze.</em></h3><span class="feature-link">Bekijk de burgers <span aria-hidden="true">↗</span></span></div><img src="./assets/v3-burger-640.webp" width="640" height="480" loading="lazy" decoding="async" alt="Conceptuele burgerillustratie, niet een specifiek Lilian-product"><span class="feature-caption">Conceptbeeld · geen productfoto</span></a>
+            <a class="discovery-card discovery-kapsalon" href="#menu" data-discover-category="kapsalon" data-reveal><div class="feature-copy"><span class="discovery-number">02 / DE KAPSALONS</span><h3>Voor de<br>grotere<br><em>trek.</em></h3><span class="feature-link">Bekijk de kapsalons <span aria-hidden="true">↗</span></span></div><img src="./assets/v3-kapsalon-640.webp" width="640" height="640" loading="lazy" decoding="async" alt="Conceptueel kapsalon-sfeerbeeld, geen productfoto van Lilian"><span class="feature-caption">Conceptbeeld · geen productfoto</span></a>
           </div>
+          <div class="discovery-extras"><a href="#menu" data-discover-category="mix-grill"><span>03 /</span> Liever van de grill? <span aria-hidden="true">↗</span></a><a href="#menu" data-discover-category="snacks"><span>04 /</span> Of gewoon een snack. <span aria-hidden="true">↗</span></a></div>
         </div>
       </section>
 
       <section class="menu-section" id="menu" aria-labelledby="menu-title">
         <div class="wrap">
           <div class="section-heading" data-reveal>
-            <div><p class="section-index"><span>03</span> DE KAART VAN LILIAN</p><h2 id="menu-title">WAAR HEB JE<br><span>TREK IN?</span></h2></div>
+            <div><p class="section-index"><span>02</span> DE KAART VAN LILIAN</p><h2 id="menu-title">Maak het<br><span>jouw keuze.</span></h2></div>
             <div class="menu-heading-side"><p>14 categorieën. 125 menu-items.<br>Kies een categorie of zoek jouw gerecht.</p><span class="menu-instruction"><span aria-hidden="true">↗</span> Open een gerecht voor details & de officiële link.</span></div>
           </div>
           <div class="menu-tools">
@@ -1221,14 +1218,14 @@
 
       <section class="order-section" id="bestellen" aria-labelledby="order-title">
         <div class="wrap order-layout">
-          <div class="order-heading" data-reveal><p class="section-index"><span>04</span> VAN KIJKEN NAAR BESTELLEN</p><h2 id="order-title">KIES HIER.<br>BESTEL BIJ <span>LILIAN.</span></h2><p>Deze website helpt je kiezen. Je winkelwagen, gegevens en betaling regel je veilig in het officiële Lilian / Sitedish-bestelsysteem.</p><a class="button button-cream" href="https://www.lilianrestaurant.nl/#menu" data-order-menu target="_blank" rel="noopener noreferrer">Naar het officiële menu <span aria-hidden="true">↗</span><span class="sr-only"> (nieuw tabblad)</span></a></div>
+          <div class="order-heading" data-reveal><p class="section-index"><span>03</span> VAN KIJKEN NAAR BESTELLEN</p><h2 id="order-title">Gekozen?<br>Bestel bij <span>Lilian.</span></h2><p>Deze website helpt je kiezen. Je winkelwagen, gegevens en betaling regel je veilig in het officiële Lilian / Sitedish-bestelsysteem.</p><a class="button button-cream" href="https://www.lilianrestaurant.nl/#menu" data-order-menu target="_blank" rel="noopener noreferrer">Naar het officiële menu <span aria-hidden="true">↗</span><span class="sr-only"> (nieuw tabblad)</span></a></div>
           <div class="order-steps" data-reveal><div><span>01</span><h3>Ontdek je gerecht.</h3><p>Bekijk naam, omschrijving en prijs op deze kaart.</p></div><div><span>02</span><h3>Open het bij Lilian.</h3><p>De knop in het detailvenster opent hetzelfde gerecht op de officiële kaart. Voeg het daar zelf toe aan je winkelwagen.</p></div><div><span>03</span><h3>Rond daar je order af.</h3><p>Kies in het officiële systeem uit de beschikbare opties voor bezorgen of afhalen en betalen.</p></div><a class="order-checkout-link" href="https://www.lilianrestaurant.nl/bestellen" data-order-checkout target="_blank" rel="noopener noreferrer">Al een winkelwagen bij Lilian? Naar je besteloverzicht <span aria-hidden="true">↗</span><span class="sr-only"> (nieuw tabblad)</span></a></div>
         </div>
       </section>
 
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div class="wrap">
-          <div class="contact-heading" data-reveal><div><p class="section-index"><span>05</span> LILIAN IN LEEUWARDEN</p><h2 id="contact-title">TOT AAN<br><span>DE VOORSTREEK.</span></h2></div><p>Kom langs of bekijk de mogelijkheden<br>in ons officiële bestelsysteem.</p></div>
+          <div class="contact-heading" data-reveal><div><p class="section-index"><span>04</span> LILIAN IN LEEUWARDEN</p><h2 id="contact-title">Tot aan<br><span>de Voorstreek.</span></h2></div><p>Kom langs of bekijk de mogelijkheden<br>in ons officiële bestelsysteem.</p></div>
           <div class="contact-grid">
             <article class="location-card" data-reveal><p class="detail-label">JE VINDT ONS HIER</p><span class="location-number" aria-hidden="true">86</span><address>Voorstreek 86<br>8911 JT Leeuwarden<br>Nederland</address><a class="button button-outline-dark" href="https://www.google.com/maps/search/?api=1&amp;query=Voorstreek+86%2C+8911JT+Leeuwarden" target="_blank" rel="noopener noreferrer">Plan je route <span aria-hidden="true">↗</span><span class="sr-only"> (nieuw tabblad)</span></a></article>
             <article class="phone-card" data-reveal><p class="detail-label">LIEVER EVEN BELLEN?</p><h3>WE HOREN<br>GRAAG VAN JE.</h3><a class="phone-link" href="tel:+31647789977">06 4778 9977 <span aria-hidden="true">↗</span></a><p>Voor vragen over de kaart, allergenen<br>of je bestelling.</p><a class="text-link" href="https://www.lilianrestaurant.nl/" target="_blank" rel="noopener noreferrer">De officiële website <span aria-hidden="true">↗</span><span class="sr-only"> (nieuw tabblad)</span></a></article>
@@ -1251,6 +1248,6 @@
       <div class="product-dialog-content"><span class="dialog-overline">JOUW KEUZE / LILIAN</span><h2 id="product-dialog-title">Gerecht</h2><p class="product-dialog-price" id="product-dialog-price"></p><p class="product-dialog-description" id="product-dialog-description"></p><div class="product-dialog-note" id="product-dialog-note"><strong>Van de kaart naar je winkelwagen.</strong><p>Open dit gerecht op de officiële Lilian-kaart en voeg het daar zelf toe. Je bestelling en betaling rond je af in het Lilian / Sitedish-bestelsysteem. Deze website heeft geen gekoppelde winkelwagen.</p></div><div class="product-dialog-actions"><a class="button button-red" id="product-dialog-order" href="https://www.lilianrestaurant.nl/#menu" target="_blank" rel="noopener noreferrer">Open dit gerecht bij Lilian <span aria-hidden="true">↗</span><span class="sr-only"> (nieuw tabblad)</span></a><button class="dialog-continue" id="product-dialog-continue" type="button">← Verder kijken op de kaart</button></div><p class="dialog-price-note">De actuele prijs en bestelmogelijkheden vind je bij Lilian.</p></div>
     </dialog>
 
-    <footer class="site-footer"><div class="wrap"><div class="footer-main"><a class="footer-brand" href="#top" aria-label="Lilian Restaurant — naar boven"><img src="./assets/lilian-logo.webp" alt="Lilian — Burger, Snack, Doner" width="220" height="122" loading="lazy"></a><p>GOOD FOOD.<span>GOOD MOOD.</span></p><a class="footer-top" href="#top">Terug naar boven <span aria-hidden="true">↑</span></a></div><div class="footer-bottom"><small>© <span data-year>2026</span> Lilian Restaurant · Leeuwarden</small><a href="https://www.lilianrestaurant.nl/bestellen" data-order-checkout target="_blank" rel="noopener noreferrer">Officieel besteloverzicht <span aria-hidden="true">↗</span><span class="sr-only"> (nieuw tabblad)</span></a><small>Online bestellen via Lilian / Sitedish.</small></div></div></footer>
+    <footer class="site-footer"><div class="wrap"><div class="footer-main"><a class="footer-brand" href="#top" aria-label="Lilian Restaurant — naar boven"><img src="./assets/lilian-logo.webp" alt="Lilian — Burger, Snack, Doner" width="220" height="122" loading="lazy"></a><p>Grote trek.<span>Goede keuze.</span></p><a class="footer-top" href="#top">Terug naar boven <span aria-hidden="true">↑</span></a></div><div class="footer-bottom"><small>© <span data-year>2026</span> Lilian Restaurant · Leeuwarden</small><a href="https://www.lilianrestaurant.nl/bestellen" data-order-checkout target="_blank" rel="noopener noreferrer">Officieel besteloverzicht <span aria-hidden="true">↗</span><span class="sr-only"> (nieuw tabblad)</span></a><small>Online bestellen via Lilian / Sitedish.</small></div></div></footer>
   </body>
 </html>
