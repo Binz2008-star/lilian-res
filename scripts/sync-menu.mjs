@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { uiIcon, iconSprite } from './ui-icons.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const context = { window: {} };
@@ -32,9 +33,9 @@ const menu = grouped.map((category) => `
       <button class="product-card" type="button" data-product-trigger data-product-id="${esc(product.id)}" aria-haspopup="dialog" aria-controls="product-dialog">
         <span class="product-topline"><span class="product-name">${esc(product.name)}</span><span class="product-price">${esc(money.format(product.priceCents / 100))}</span></span>
         ${product.description ? `<span class="product-description">${esc(product.description)}</span>` : ''}
-        <span class="product-open-hint">Bekijk gerecht <span aria-hidden="true">↗</span></span>
+        <span class="product-open-hint">Bekijk gerecht <span aria-hidden="true">${uiIcon('arrow-up-right')}</span></span>
       </button>
-      <noscript><a class="nojs-product-order" href="${esc(data.productAnchorBaseUrl + encodeURIComponent(product.id))}" target="_blank" rel="noopener noreferrer">Open ${esc(product.name)} bij Lilian <span aria-hidden="true">↗</span><span class="sr-only"> (nieuw tabblad)</span></a></noscript>
+      <noscript><a class="nojs-product-order" href="${esc(data.productAnchorBaseUrl + encodeURIComponent(product.id))}" target="_blank" rel="noopener noreferrer">Open ${esc(product.name)} bij Lilian <span aria-hidden="true">${uiIcon('arrow-up-right')}</span><span class="sr-only"> (nieuw tabblad)</span></a></noscript>
     </li>`).join('')}
   </ul>
 </section>`).join('\n');
@@ -78,5 +79,6 @@ replaceBlock('MENU-FILTERS', filters);
 replaceBlock('MENU-CONTENT', menu);
 replaceBlock('HOURS', hours);
 replaceBlock('RESTAURANT-SCHEMA', schemaHTML);
+replaceBlock('UI-ICONS', iconSprite);
 fs.writeFileSync(path.join(root, 'index.html'), html);
 console.log(`Static catalogue regenerated: ${data.products.length} products, ${data.categories.length} categories, ${data.hours.length} hours rows.`);

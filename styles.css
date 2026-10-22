@@ -457,3 +457,15 @@ h1 { margin: 0 0 30px; font-size: clamp(86px, 9vw, 142px); line-height: .82; let
   .product-open-hint { display: none; }
   .category-heading { break-after: avoid; }
 }
+
+/* Monochrome SVG UI: no emoji fonts or text-glyph action icons. */
+.ui-sprite { position:absolute; width:0; height:0; overflow:hidden; pointer-events:none; }
+.ui-icon { display:inline-block; width:20px; height:20px; flex:0 0 auto; vertical-align:middle; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.button > span[aria-hidden], .hero-secondary > span, .hero-bottom > a > span, .text-link > span[aria-hidden], .footer-top > span, .feature-link > span, .phone-link > span { display:inline-flex; align-items:center; justify-content:center; }
+.product-open-hint .ui-icon { width:13px; height:13px; }
+.hero-scroll .ui-icon { width:18px; height:18px; }
+.dialog-close .ui-icon, .search-clear .ui-icon { width:18px; height:18px; }
+.search-clear { display:grid; place-items:center; }
+.food-seal .ui-icon { width:16px; height:16px; }
+.feature-link .ui-icon, .discovery-extras .ui-icon { width:18px; height:18px; }
+.dialog-continue .ui-icon { width:16px; height:16px; margin-right:8px; }
