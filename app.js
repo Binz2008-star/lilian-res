@@ -2,61 +2,67 @@
   const data = window.LILIAN_SITE;
   if (!data) return;
 
+  const escapeHTML = (value) => String(value ?? '').replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[character]);
+
+  const money = new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' });
   document.querySelectorAll('[data-year]').forEach((node) => {
     node.textContent = String(new Date().getFullYear());
   });
-  document.querySelectorAll('[data-address]').forEach((node) => {
-    node.textContent = data.cityLabel;
-  });
-  document.querySelectorAll('[data-hours-summary]').forEach((node) => {
-    node.textContent = data.hoursSummary;
-  });
-  document.querySelectorAll('[data-contact]').forEach((node) => {
-    node.textContent = data.contactSummary;
-  });
 
-  const hoursList = document.querySelector('[data-hours-list]');
-  if (hoursList && Array.isArray(data.exampleHours)) {
-    hoursList.innerHTML = data.exampleHours.map(([day, hours]) => `
-      <li><span>${day}</span><span>${hours}</span></li>
-    `).join('');
-  }
+  const filters = document.querySelector('#category-filters');
+  const menuRoot = document.querySelector('#menu-categories');
+  const results = document.querySelector('#results-count');
 
-  const menuRoot = document.querySelector('#menu-items');
-  const categories = [...new Set(data.menu.map((item) => item.category))];
-  const categoryTitles = Object.fromEntries(data.menu.map((item) => [item.category, item.categoryLabel]));
+  function renderMenu(activeCategory = 'all') {
+    const visibleCategories = activeCategory === 'all'
+      ? data.categories
+      : data.categories.filter((category) => category.id === activeCategory);
 
-  function renderMenu(filter = 'alles') {
-    const visible = filter === 'alles' ? data.menu : data.menu.filter((item) => item.category === filter);
-    const groups = categories
-      .map((category) => ({ category, items: visible.filter((item) => item.category === category) }))
-      .filter((group) => group.items.length);
+    filters.innerHTML = [
+      `<button class="filter-button${activeCategory === 'all' ? ' is-active' : ''}" type="button" data-category-filter="all" aria-pressed="${activeCategory === 'all'}">Alles</button>`,
+      ...data.categories.map((category) => `<button class="filter-button${activeCategory === category.id ? ' is-active' : ''}" type="button" data-category-filter="${escapeHTML(category.id)}" aria-pressed="${activeCategory === category.id}">${escapeHTML(category.label)}</button>`)
+    ].join('');
 
-    menuRoot.innerHTML = groups.map((group) => `
-      <section class="menu-group" aria-label="${categoryTitles[group.category]}">
-        <h3>${categoryTitles[group.category]}</h3>
-        ${group.items.map((item) => `
-          <article class="menu-item">
-            <h4>${item.name}</h4>
-            <p>${item.description}</p>
-            <span class="menu-price">${item.price}*</span>
-          </article>
-        `).join('')}
-      </section>
-    `).join('');
+    menuRoot.innerHTML = visibleCategories.map((category) => {
+      const items = data.products.filter((product) => product.categoryId === category.id);
+      return `
+        <section class="menu-category" aria-labelledby="category-${escapeHTML(category.id)}">
+          <header class="category-heading">
+            <h3 id="category-${escapeHTML(category.id)}">${escapeHTML(category.label)}</h3>
+            <span class="category-count">${items.length} ${items.length === 1 ? 'ITEM' : 'ITEMS'}</span>
+          </header>
+          <ul class="product-list">
+            ${items.map((item) => `
+              <li class="product-item">
+                <div class="product-topline">
+                  <h4 class="product-name">${escapeHTML(item.name)}</h4>
+                  <span class="product-price">${money.format(item.priceCents / 100)}</span>
+                </div>
+                ${item.description ? `<p class="product-description">${escapeHTML(item.description)}</p>` : ''}
+              </li>
+            `).join('')}
+          </ul>
+        </section>`;
+    }).join('');
+
+    const count = activeCategory === 'all'
+      ? data.products.length
+      : data.products.filter((product) => product.categoryId === activeCategory).length;
+    results.textContent = `${count} ${count === 1 ? 'menu-item' : 'menu-items'}${activeCategory === 'all' ? ' op de kaart' : ` in ${visibleCategories[0].label}`}`;
+
+    filters.querySelectorAll('[data-category-filter]').forEach((button) => {
+      button.addEventListener('click', () => renderMenu(button.dataset.categoryFilter));
+    });
   }
 
   renderMenu();
-  document.querySelectorAll('[data-filter]').forEach((button) => {
-    button.addEventListener('click', () => {
-      document.querySelectorAll('[data-filter]').forEach((candidate) => {
-        const active = candidate === button;
-        candidate.classList.toggle('is-active', active);
-        candidate.setAttribute('aria-pressed', String(active));
-      });
-      renderMenu(button.dataset.filter);
-    });
-  });
+
+  const hoursList = document.querySelector('#hours-list');
+  hoursList.innerHTML = data.hours.map(([day, hours]) => `
+    <li><span>${escapeHTML(day)}</span><strong>${escapeHTML(hours)}</strong></li>
+  `).join('');
 
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('#main-nav');
@@ -71,12 +77,4 @@
     navToggle.setAttribute('aria-label', 'Menu openen');
     nav.classList.remove('is-open');
   }));
-
-  const booking = document.querySelector('[data-reservation-link]');
-  if (data.reservationUrl) {
-    booking.href = data.reservationUrl;
-    booking.target = '_blank';
-    booking.rel = 'noreferrer';
-    booking.innerHTML = 'Reserveer een tafel <span aria-hidden="true">↗</span>';
-  }
 })();

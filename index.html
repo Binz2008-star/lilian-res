@@ -3,13 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#c8e85a">
-    <meta name="description" content="Lilian — een vrolijke plek om samen aan tafel te schuiven. Eerste presentatiedemo; alle restaurantdetails worden nog bevestigd.">
-    <title>Lilian — schuif gezellig aan</title>
-    <link rel="icon" href="./assets/lilian-mark.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#09090b">
+    <meta name="description" content="Ontdek de menukaart van Lilian Restaurant in Leeuwarden. Burgers, kapsalon, Turkse pizza, snacks en meer. Bestel online.">
+    <meta property="og:title" content="Lilian Restaurant Leeuwarden | Good Food, Good Mood">
+    <meta property="og:description" content="Bekijk de menukaart en bestel online bij Lilian Restaurant, Voorstreek 86 in Leeuwarden.">
+    <meta property="og:type" content="website">
+    <title>Lilian Restaurant Leeuwarden | Good Food, Good Mood</title>
+    <link rel="icon" href="./assets/lilian-official-logo.jpg" type="image/jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <script defer src="./restaurant-data.js"></script>
     <script defer src="./app.js"></script>
@@ -17,146 +20,113 @@
   <body>
     <a class="skip-link" href="#main">Ga naar de inhoud</a>
 
-    <div class="demo-ribbon" role="status">
-      <span class="ribbon-spark" aria-hidden="true">✳</span>
-      Presentatiedemo · conceptcopy en restaurantgegevens worden in fase 2 bevestigd
-      <span class="ribbon-spark" aria-hidden="true">✳</span>
-    </div>
-
     <header class="site-header" id="top">
       <div class="header-inner">
-        <a class="brand" href="#top" aria-label="Lilian — naar boven">
-          <img class="brand-mark" src="./assets/lilian-mark.svg" alt="" width="43" height="43">
-          <span class="brand-word">Lilian<span class="brand-dot">.</span><small>schuif gezellig aan</small></span>
+        <a class="brand" href="#top" aria-label="Lilian Restaurant — naar boven">
+          <img src="./assets/lilian-official-logo.jpg" alt="Lilian Burger · Snack · Doner" width="112" height="62">
         </a>
         <button class="nav-toggle" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="main-nav">
           <span></span><span></span>
         </button>
         <nav class="main-nav" id="main-nav" aria-label="Hoofdnavigatie">
-          <a href="#verhaal">Ons verhaal</a>
-          <a href="#menu">De kaart</a>
-          <a href="#bezoek">Bezoek ons</a>
+          <a href="#menu">Menukaart</a>
+          <a href="#over">Over Lilian</a>
+          <a href="#contact">Contact & openingstijden</a>
         </nav>
-        <a class="button button-nav" href="#bezoek">Reserveer <span aria-hidden="true">↗</span></a>
+        <a class="button button-order button-header" href="https://www.lilianrestaurant.nl/bestellen" target="_blank" rel="noopener noreferrer">Bestel online <span aria-hidden="true">↗</span></a>
       </div>
     </header>
 
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-inner">
+        <div class="hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> WELKOM BIJ LILIAN</p>
-            <h1 id="hero-title">Aan tafel<br>is alles <em>leuker.</em></h1>
-            <p class="hero-intro">Een vrolijke plek voor lekker eten, fijne mensen en nog één verhaal voor je naar huis gaat.</p>
+            <p class="eyebrow"><span class="red-dot" aria-hidden="true"></span> BURGER · SNACK · DONER · LEEUWARDEN</p>
+            <h1 id="hero-title">GOOD FOOD.<br><span>GOOD MOOD.</span></h1>
+            <p class="hero-intro">Trek in een burger, kapsalon of Turkse pizza? Ontdek de kaart van Lilian en bestel jouw favorieten eenvoudig online.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#menu">Proef de sfeer <span aria-hidden="true">↓</span></a>
-              <a class="text-link" href="#verhaal">Leer Lilian kennen <span aria-hidden="true">↗</span></a>
+              <a class="button button-order" href="https://www.lilianrestaurant.nl/bestellen" target="_blank" rel="noopener noreferrer">Bekijk & bestel <span aria-hidden="true">↗</span></a>
+              <a class="button button-ghost" href="#menu">Bekijk de menukaart <span aria-hidden="true">↓</span></a>
             </div>
-            <div class="hero-note" aria-label="Demo-informatie">
-              <span class="note-star" aria-hidden="true">✳</span>
-              <span>Een eerste indruk —<br><strong>de details volgen nog.</strong></span>
-            </div>
-            <svg class="hero-scribble" viewBox="0 0 165 28" aria-hidden="true"><path d="M4 19C32 4 57 27 84 13s48-7 76-9" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+            <div class="hero-address"><span class="pin" aria-hidden="true">⌖</span><span>Voorstreek 86<br><strong>8911JT Leeuwarden</strong></span></div>
           </div>
-
-          <div class="hero-art">
-            <div class="hero-photo-wrap">
-              <img src="./assets/generated-hero.webp" alt="Illustratief beeld van een warme, uitnodigende restaurantzaal; geen officiële restaurantfoto">
-              <span class="hero-image-note">Sfeerbeeld · illustratief</span>
-              <span class="photo-stamp">kom<br>maar<br><b>binnen!</b></span>
-            </div>
-            <div class="hero-burst" aria-hidden="true"><span>lekker<br>lang<br>tafelen</span><svg viewBox="0 0 100 100"><path d="M50 2 58 31 82 12 69 39 99 42 71 54 91 78 63 68 58 98 47 70 21 91 32 63 2 58 30 47 10 21 38 33Z"/></svg></div>
-            <span class="art-doodle art-doodle-one" aria-hidden="true">✿</span>
-            <span class="art-doodle art-doodle-two" aria-hidden="true">〰</span>
-          </div>
-        </div>
-        <div class="hero-bottomline"><span>ETEN · ONTMOETEN · GENIETEN</span><span>✳</span><span>IN NEDERLAND</span></div>
-      </section>
-
-      <div class="ticker" aria-label="Bij Lilian schuif je gezellig aan">
-        <div class="ticker-track" aria-hidden="true"><span>GOED ETEN</span><b>✳</b><span>FIJNE MENSEN</span><b>✳</b><span>GEZELLIG AANSCHUIVEN</span><b>✳</b><span>GOED ETEN</span><b>✳</b><span>FIJNE MENSEN</span><b>✳</b></div>
-      </div>
-
-      <section class="story section-pad" id="verhaal" aria-labelledby="story-title">
-        <div class="story-photo-block">
-          <figure class="story-photo">
-            <img src="./assets/story-room.webp" alt="Illustratief sfeerbeeld van een knusse eethoek met warm licht" loading="lazy">
-            <figcaption>SFEERBEELD · LILIAN</figcaption>
+          <figure class="hero-visual">
+            <img src="./assets/official-food.jpg" alt="Hamburger met sla, tomaat en kaas, zoals afgebeeld op de officiële website van Lilian" width="1000" height="750" fetchpriority="high">
+            <figcaption><span class="image-line" aria-hidden="true"></span> LILIAN · LEEUWARDEN</figcaption>
+            <div class="hero-seal" aria-label="Good Food, Good Mood"><span>GOOD FOOD</span><strong>GOOD<br>MOOD!</strong><i aria-hidden="true">✳</i></div>
           </figure>
-          <span class="story-sticker">Welkom!<br><span>schuif aan</span></span>
-          <span class="story-spark" aria-hidden="true">✳</span>
         </div>
-        <div class="story-copy">
-          <p class="eyebrow"><span class="eyebrow-dot blue-dot" aria-hidden="true"></span> HET VERHAAL VAN LILIAN</p>
-          <h2 id="story-title">Een tafel waar <em>iedereen</em> bij past.</h2>
-          <p class="body-copy">Bij Lilian draait het om samen aanschuiven, iets lekkers delen en alle tijd hebben voor elkaar. Dit is een eerste, warme indruk van het restaurant — de persoonlijke details vullen we aan zodra ze bevestigd zijn.</p>
-          <a class="text-link text-link-green" href="#bezoek">Ontdek hoe je ons vindt <span aria-hidden="true">↘</span></a>
-          <div class="hand-note">“Welkom, je bent precies op tijd.”</div>
+        <div class="hero-foot"><span>LEKKER ETEN</span><span class="foot-cross" aria-hidden="true">✳</span><span>MAKKELIJK ONLINE BESTELLEN</span><span class="foot-cross" aria-hidden="true">✳</span><span>IN LEEUWARDEN</span></div>
+      </section>
+
+      <section class="intro-strip" id="over" aria-label="Over Lilian Restaurant">
+        <div class="intro-message">
+          <p class="eyebrow"><span class="red-dot" aria-hidden="true"></span> JOUW TREK, JOUW KEUZE</p>
+          <h2>Van burger tot <span>kapsalon.</span></h2>
+          <p>Ontdek de menukaart van Lilian Restaurant: burgers, kipburgers, döner, mix grill, pasta, Turkse pizza, snacks en meer.</p>
+        </div>
+        <div class="intro-stats" aria-label="Restaurantinformatie">
+          <div><strong>14</strong><span>menucategorieën</span></div>
+          <div><strong>125</strong><span>menu-items</span></div>
+          <div><strong>LEEUWARDEN</strong><span>Voorstreek 86</span></div>
         </div>
       </section>
 
-      <section class="menu-section section-pad" id="menu" aria-labelledby="menu-title">
+      <section class="menu-section" id="menu" aria-labelledby="menu-title">
         <div class="section-heading">
           <div>
-            <p class="eyebrow"><span class="eyebrow-dot red-dot" aria-hidden="true"></span> VAN DE TAFEL VAN LILIAN</p>
-            <h2 id="menu-title">Een kaart vol <em>goede zin.</em></h2>
+            <p class="eyebrow"><span class="red-dot" aria-hidden="true"></span> KIJK WAAR JE ZIN IN HEBT</p>
+            <h2 id="menu-title">DE <span>MENUKAART</span></h2>
           </div>
-          <p class="heading-aside">Een voorbeeld om de sfeer te proeven.<br>De echte kaart volgt in fase 2.</p>
+          <div class="menu-heading-side">
+            <p>Alle categorieën op een rij.<br>Gevonden? Bestel direct online.</p>
+            <a href="https://www.lilianrestaurant.nl/bestellen" target="_blank" rel="noopener noreferrer">Bestel bij Lilian <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
-        <div class="demo-notice"><span aria-hidden="true">✳</span><p><strong>Voorbeeldmenu</strong> — gerechten en europrijzen zijn uitsluitend demotekst en nog niet bevestigd door het restaurant.</p></div>
+        <div class="category-bar">
+          <div class="category-filters" id="category-filters" role="group" aria-label="Filter menucategorieën"></div>
+        </div>
+        <p class="results-count" id="results-count" aria-live="polite"></p>
+        <div class="menu-grid" id="menu-categories"></div>
+        <div class="menu-order-banner">
+          <div><span class="eyebrow">IETS LEKKERS GEVONDEN?</span><h3>Dan staat het zo voor je klaar.</h3></div>
+          <a class="button button-dark" href="https://www.lilianrestaurant.nl/bestellen" target="_blank" rel="noopener noreferrer">Bestel online <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="menu-source-note">Prijzen en samenstelling kunnen wijzigen. Bekijk de officiële bestelpagina voor de meest actuele informatie en beschikbaarheid.</p>
+      </section>
 
-        <div class="menu-layout">
-          <article class="featured-dish">
-            <div class="featured-photo">
-              <img src="./assets/generated-dish.webp" alt="Illustratief seizoensgerecht met geroosterde groenten en brood; geen officiële restaurantfoto" loading="lazy">
-              <span class="featured-tag">DEMO<br>FAVORIET</span>
-            </div>
-            <div class="featured-caption">
-              <div><span class="mini-label">EEN VOORBEELD VAN DE CHEF</span><h3>Het vrolijke seizoensbord</h3></div>
-              <span class="featured-price">€ 18,50*</span>
-            </div>
-            <p>Een kleurrijk bord met iets warms, iets fris en een beetje verrassing. Voorbeeldgerecht — ingrediënten en prijs worden nog afgestemd.</p>
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-heading">
+          <p class="eyebrow"><span class="white-dot" aria-hidden="true"></span> KOM LANGS OF BESTEL ONLINE</p>
+          <h2 id="contact-title">LILIAN,<br><span>LEEUWARDEN.</span></h2>
+          <a class="button button-light" href="https://www.lilianrestaurant.nl/bestellen" target="_blank" rel="noopener noreferrer">Plaats je bestelling <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="contact-details">
+          <article class="detail-card">
+            <span class="detail-icon" aria-hidden="true">⌖</span>
+            <p class="detail-label">ADRES</p>
+            <address><a href="https://www.google.com/maps/search/?api=1&amp;query=Voorstreek+86%2C+8911JT+Leeuwarden" target="_blank" rel="noopener noreferrer">Voorstreek 86<br>8911JT Leeuwarden <span aria-hidden="true">↗</span></a></address>
           </article>
-
-          <div class="menu-panel">
-            <div class="menu-filters" role="group" aria-label="Filter voorbeeldmenu">
-              <button class="filter-button is-active" type="button" data-filter="alles" aria-pressed="true">Alles</button>
-              <button class="filter-button" type="button" data-filter="delen" aria-pressed="false">Om te delen</button>
-              <button class="filter-button" type="button" data-filter="keuken" aria-pressed="false">Van de keuken</button>
-              <button class="filter-button" type="button" data-filter="zoet" aria-pressed="false">Zoet & fris</button>
-            </div>
-            <div class="menu-list" id="menu-items" aria-live="polite"></div>
-            <p class="price-note">*Alle bedragen zijn voorbeeldprijzen ter illustratie.</p>
-          </div>
+          <article class="detail-card">
+            <span class="detail-icon" aria-hidden="true">☎</span>
+            <p class="detail-label">BEL ONS</p>
+            <a class="phone-link" href="tel:+31647789977">0647789977</a>
+          </article>
+          <article class="detail-card hours-card">
+            <span class="detail-icon" aria-hidden="true">◷</span>
+            <p class="detail-label">OPENINGS- & BEZORGTIJDEN</p>
+            <p class="hours-caption">Volgens de officiële website</p>
+            <ul class="hours-list" id="hours-list"></ul>
+          </article>
         </div>
-      </section>
-
-      <section class="visit-section section-pad" id="bezoek" aria-labelledby="visit-title">
-        <div class="visit-inner">
-          <div class="visit-copy">
-            <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> TOT STRAKS BIJ LILIAN</p>
-            <h2 id="visit-title">Zullen we een <em>tafel</em> voor je bewaren?</h2>
-            <p>De echte locatie, openingstijden en reserveringsroute volgen zodra de restaurantgegevens compleet zijn. Voor nu is dit de plek waar ze straks komen te staan.</p>
-            <a class="button button-light" href="#contact-details">Bekijk bezoekinformatie <span aria-hidden="true">↓</span></a>
-          </div>
-          <div class="visit-card" id="contact-details">
-            <div class="visit-card-top"><span class="visit-icon" aria-hidden="true">✳</span><span class="demo-label">GEGEVENS VOLGEN</span></div>
-            <div class="visit-row"><span class="visit-symbol" aria-hidden="true">⌖</span><div><small>ADRES</small><strong data-address>Adres in Nederland volgt</strong></div></div>
-            <div class="visit-row visit-hours"><span class="visit-symbol" aria-hidden="true">◷</span><div><small>OPENINGSTIJDEN · VOORBEELD</small><strong data-hours-summary>Voorbeelduren — definitieve tijden volgen</strong><ul class="hours-list" data-hours-list aria-label="Voorbeeldopeningstijden"></ul></div></div>
-            <div class="visit-row"><span class="visit-symbol" aria-hidden="true">↗</span><div><small>RESERVEREN & CONTACT</small><strong data-contact>Contactgegevens volgen</strong></div></div>
-            <a class="reserve-link" data-reservation-link href="#contact-details">Reserveringslink volgt <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </section>
-
-      <section class="closing-line" aria-label="Lilian">
-        <span class="closing-doodle" aria-hidden="true">✿</span><p>Goed eten. Fijne mensen. <em>Tot aan tafel!</em></p><span class="closing-doodle blue-doodle" aria-hidden="true">✳</span>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="footer-top"><a class="brand footer-brand" href="#top"><img class="brand-mark" src="./assets/lilian-mark.svg" alt="" width="38" height="38"><span class="brand-word">Lilian<span class="brand-dot">.</span><small>schuif gezellig aan</small></span></a><a class="back-top" href="#top">Terug naar boven ↑</a></div>
-      <div class="footer-bottom"><span>© <span data-year></span> Lilian · Presentatiedemo</span><span>In Nederland · praktische gegevens volgen</span><a href="https://www.pexels.com/license/" target="_blank" rel="noreferrer">Sfeerbeelden: Pexels</a></div>
+      <a class="footer-brand" href="#top" aria-label="Lilian Restaurant — naar boven"><img src="./assets/lilian-official-logo.jpg" alt="Lilian Burger · Snack · Doner" width="112" height="62"></a>
+      <span>GOOD FOOD. GOOD MOOD.</span>
+      <a class="footer-top" href="#top">Terug naar boven ↑</a>
+      <small>© <span data-year></span> Lilian Restaurant · Leeuwarden</small>
     </footer>
   </body>
 </html>

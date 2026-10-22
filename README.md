@@ -1,27 +1,31 @@
-# Lilian — ديمو العرض
+# Lilian Restaurant — website
 
-موقع مطعم ثابت باللغة الهولندية، أُعدّ كمرحلة أولى لعرض التصميم على العميل. استُلهمت هويته من الصورة المرسلة: أخضر ليموني وأخضر داكن، لمسات زرقاء وحمراء، وترحيب مرح مع تفاصيل مرسومة يدويًا.
+Website voor Lilian Restaurant in Leeuwarden. Het ontwerp volgt de door de klant aangeleverde menukaart als visuele richting: houtskoolzwart, rood en wit, compacte menukoppen en duidelijk leesbare prijzen. De site gebruikt de officiële restaurantnaam en het logo.
 
-## حالة المحتوى
+## Officiële informatie
 
-هذه نسخة عرض وليست معلومات تشغيلية مؤكدة. `restaurant-data.js` يحتوي على أطباق وأسعار وساعات نموذجية باليورو، بينما العنوان ووسائل الاتصال ورابط الحجز معروضة كحقول تنتظر التفاصيل الفعلية. تظهر التنبيهات بوضوح على الصفحة. في المرحلة الثانية، استبدل النصوص والقائمة والأسعار وساعات العمل والعنوان وبيانات الحجز بما يؤكده المطعم قبل اعتبار الموقع جاهزًا للجمهور.
+Menu-items, categorieën, beschrijvingen en prijzen zijn overgenomen van de actuele officiële website van [Lilian Restaurant](https://www.lilianrestaurant.nl/). De weergegeven contactgegevens zijn Voorstreek 86, 8911JT Leeuwarden en 0647789977. De officiële website vermeldt openingstijden en bezorgtijden van 07:00 tot 12:00 voor alle weekdagen. De site verwijst voor actuele beschikbaarheid en bestellen door naar [de officiële bestelpagina](https://www.lilianrestaurant.nl/bestellen).
 
-## التشغيل محليًا
+Controleer prijzen en openingstijden voordat je een wijziging publiceert; de restaurantwebsite en voorraad kunnen veranderen. De website claimt niet dat de zaak op dit moment geopend is.
 
-يمكن فتح `index.html` مباشرةً، أو تشغيل خادم ثابت:
+## Bestanden
+
+- `index.html`: Nederlandse site, navigatie, introductie, menukaart en contactgegevens.
+- `styles.css`: zwart-rood-witte stijl, menu-boardcomponenten en mobiele weergave.
+- `restaurant-data.js`: gegevens voor 125 producten, 14 categorieën, adres, telefoon en uren.
+- `app.js`: categorieknoppen, prijspresentatie en mobiele navigatie.
+- `assets/lilian-official-logo.jpg` en `assets/official-food.jpg`: lokaal gebundelde afbeeldingen van de officiële Lilian-website.
+
+## Lokaal bekijken
+
+Open `index.html` of start een statische server:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-ثم افتح `http://localhost:8000`.
+Open daarna `http://localhost:8000`.
 
 ## GitHub Pages
 
-الموقع يستخدم HTML وCSS وJavaScript وصورًا محلية، ولا يحتاج إلى بناء أو خادم. مصدر النشر هو المجلد الرئيسي للفرع `main`. الرابط المتوقع: [https://binz2008-star.github.io/lilian-res/](https://binz2008-star.github.io/lilian-res/).
-
-إذا لم يكن Pages مفعّلًا، افتح **Settings → Pages** واختر **Deploy from a branch**، ثم `main` و`/ (root)`. ملف `.nojekyll` موجود. أي تحديث لاحق يُنشر عبر commit جديد إلى `main`.
-
-## الصور والعلامة
-
-`assets/generated-hero.webp` و`assets/generated-dish.webp` صورتان مولّدتان توضيحيتان، وليستا صورًا رسمية للمطعم. `assets/story-room.webp` صورة أجواء من Pexels؛ راجع [ترخيص Pexels](https://www.pexels.com/license/). يفضّل استبدال كل الصور التوضيحية بصور المطعم الأصلية في المرحلة الثانية. `assets/lilian-mark.svg` علامة تجريبية وليست شعارًا رسميًا معتمدًا.
+De website wordt gehost vanuit de hoofdmap van de `main`-branch in [Binz2008-star/lilian-res](https://github.com/Binz2008-star/lilian-res). GitHub Pages is ingesteld op `main` en `/(root)`. Het publieke adres is [https://binz2008-star.github.io/lilian-res/](https://binz2008-star.github.io/lilian-res/). Een push naar `main` werkt de gepubliceerde site bij.
