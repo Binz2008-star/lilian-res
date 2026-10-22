@@ -33,7 +33,7 @@
           <a href="#over">Over Lilian</a>
           <a href="#contact">Contact & openingstijden</a>
         </nav>
-        <a class="button button-order button-header" href="https://www.lilianrestaurant.nl/bestellen" target="_blank" rel="noopener noreferrer">Bestel online <span aria-hidden="true">↗</span></a>
+        <a class="button button-order button-header" href="https://www.lilianrestaurant.nl/#menu" target="_blank" rel="noopener noreferrer">Bestel online <span aria-hidden="true">↗</span></a>
       </div>
     </header>
 
@@ -45,7 +45,7 @@
             <h1 id="hero-title">GOOD FOOD.<br><span>GOOD MOOD.</span></h1>
             <p class="hero-intro">Trek in een burger, kapsalon of Turkse pizza? Ontdek de kaart van Lilian en bestel jouw favorieten eenvoudig online.</p>
             <div class="hero-actions">
-              <a class="button button-order" href="https://www.lilianrestaurant.nl/bestellen" target="_blank" rel="noopener noreferrer">Bekijk & bestel <span aria-hidden="true">↗</span></a>
+              <a class="button button-order" href="https://www.lilianrestaurant.nl/#menu" target="_blank" rel="noopener noreferrer">Bekijk & bestel <span aria-hidden="true">↗</span></a>
               <a class="button button-ghost" href="#menu">Bekijk de menukaart <span aria-hidden="true">↓</span></a>
             </div>
             <div class="hero-address"><span class="pin" aria-hidden="true">⌖</span><span>Voorstreek 86<br><strong>8911JT Leeuwarden</strong></span></div>
@@ -79,8 +79,8 @@
             <h2 id="menu-title">DE <span>MENUKAART</span></h2>
           </div>
           <div class="menu-heading-side">
-            <p>Alle categorieën op een rij.<br>Gevonden? Bestel direct online.</p>
-            <a href="https://www.lilianrestaurant.nl/bestellen" target="_blank" rel="noopener noreferrer">Bestel bij Lilian <span aria-hidden="true">↗</span></a>
+            <p>Alle categorieën op een rij.<br>Gevonden? Open het gerecht en bestel bij Lilian.</p>
+            <a href="https://www.lilianrestaurant.nl/#menu" target="_blank" rel="noopener noreferrer">Naar de menukaart <span aria-hidden="true">↗</span></a>
           </div>
         </div>
         <div class="category-bar">
@@ -89,17 +89,18 @@
         <p class="results-count" id="results-count" aria-live="polite"></p>
         <div class="menu-grid" id="menu-categories"></div>
         <div class="menu-order-banner">
-          <div><span class="eyebrow">IETS LEKKERS GEVONDEN?</span><h3>Dan staat het zo voor je klaar.</h3></div>
-          <a class="button button-dark" href="https://www.lilianrestaurant.nl/bestellen" target="_blank" rel="noopener noreferrer">Bestel online <span aria-hidden="true">↗</span></a>
+          <div><span class="eyebrow">IETS LEKKERS GEVONDEN?</span><h3>Kies het op de officiële menukaart.</h3></div>
+          <a class="button button-dark" href="https://www.lilianrestaurant.nl/#menu" target="_blank" rel="noopener noreferrer">Bekijk het menu <span aria-hidden="true">↗</span></a>
         </div>
-        <p class="menu-source-note">Prijzen en samenstelling kunnen wijzigen. Bekijk de officiële bestelpagina voor de meest actuele informatie en beschikbaarheid.</p>
+        <a class="menu-checkout-link" href="https://www.lilianrestaurant.nl/bestellen" target="_blank" rel="noopener noreferrer">Al iets toegevoegd aan je winkelwagen? Ga naar je besteloverzicht <span aria-hidden="true">↗</span></a>
+        <p class="menu-source-note">Een gerecht openen brengt je naar hetzelfde item op de officiële kaart. Voeg het daar toe met de prijs-knop en rond je bestelling op Lilian.nl af; deze website heeft geen gekoppelde winkelwagen of betaalstap.</p>
       </section>
 
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div class="contact-heading">
           <p class="eyebrow"><span class="white-dot" aria-hidden="true"></span> KOM LANGS OF BESTEL ONLINE</p>
           <h2 id="contact-title">LILIAN,<br><span>LEEUWARDEN.</span></h2>
-          <a class="button button-light" href="https://www.lilianrestaurant.nl/bestellen" target="_blank" rel="noopener noreferrer">Plaats je bestelling <span aria-hidden="true">↗</span></a>
+          <a class="button button-light" href="https://www.lilianrestaurant.nl/#menu" target="_blank" rel="noopener noreferrer">Bekijk menu & bestel <span aria-hidden="true">↗</span></a>
         </div>
         <div class="contact-details">
           <article class="detail-card">
@@ -121,6 +122,23 @@
         </div>
       </section>
     </main>
+
+    <dialog class="product-dialog" id="product-dialog" aria-labelledby="product-dialog-title" aria-describedby="product-dialog-note">
+      <div class="product-dialog-top">
+        <p class="eyebrow"><span class="red-dot" aria-hidden="true"></span> <span id="product-dialog-category">LILIAN · MENU</span></p>
+        <button class="dialog-close" id="product-dialog-close" type="button" aria-label="Venster sluiten">×</button>
+      </div>
+      <div class="product-dialog-content">
+        <h2 id="product-dialog-title">Gerecht</h2>
+        <p class="product-dialog-price" id="product-dialog-price"></p>
+        <p class="product-dialog-description" id="product-dialog-description"></p>
+        <p class="product-dialog-note" id="product-dialog-note">Je opent hetzelfde gerecht op de officiële menukaart van Lilian. Tik daar op de prijs-knop om het aan de winkelwagen toe te voegen. Je bestelling en betaling rond je af op Lilian.nl.</p>
+        <div class="product-dialog-actions">
+          <a class="button button-order" id="product-dialog-order" href="https://www.lilianrestaurant.nl/#menu" target="_blank" rel="noopener noreferrer">Bekijk dit gerecht bij Lilian <span aria-hidden="true">↗</span></a>
+          <button class="button button-ghost" id="product-dialog-continue" type="button">Verder kijken</button>
+        </div>
+      </div>
+    </dialog>
 
     <footer class="site-footer">
       <a class="footer-brand" href="#top" aria-label="Lilian Restaurant — naar boven"><img src="./assets/lilian-official-logo.jpg" alt="Lilian Burger · Snack · Doner" width="112" height="62"></a>

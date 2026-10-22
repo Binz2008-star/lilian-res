@@ -3,6 +3,8 @@ window.LILIAN_SITE = Object.freeze({
   "address": "Voorstreek 86, 8911JT Leeuwarden",
   "phone": "0647789977",
   "phoneHref": "tel:+31647789977",
+  "menuUrl": "https://www.lilianrestaurant.nl/#menu",
+  "productAnchorBaseUrl": "https://www.lilianrestaurant.nl/#product",
   "orderUrl": "https://www.lilianrestaurant.nl/bestellen",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Voorstreek+86%2C+8911JT+Leeuwarden",
   "sourceUrl": "https://www.lilianrestaurant.nl/",
